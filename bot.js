@@ -8,16 +8,16 @@ var Bot = new TwitterBot({
     access_token_secret: process.env.BOT_ACCESS_TOKEN_SECRET
 });
 
-var phraseArray = [ "hey twitter",
-    "im tweeting",
-    "tweet tweet",
-    "tweetstorm time... 1/22",
-    "plz RT v important",
-    "delete ur account",
-    "it me",
-    "same",
-    "#dogpants go on 4 legs!!",
-    "#thedress is blue and black" ];
+var phraseArray = [ "hello darkness",
+    "my old friend",
+    "chirp chirp",
+    "so how bout that weather",
+    "indescribable",
+    "delete this neffew",
+    "itz me snek",
+    "meirl",
+    "how would pants wear pants?",
+    "i aint the sharpest tool in the shed" ];
 
 function chooseRandom(myArray) {
     return myArray[Math.floor(Math.random() * myArray.length)];
