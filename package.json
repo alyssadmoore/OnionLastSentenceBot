@@ -1,15 +1,17 @@
 {
-  "name": "project2",
+  "name": "Project2",
   "version": "1.0.0",
   "description": "Pic of the day bot",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Alyssa Moore",
   "license": "ISC",
   "dependencies": {
     "node-twitterbot": "^0.2.2",
-    "twit": "^2.2.5"
+    "twit": "^2.2.5",
+    "request": "latest",
+    "cheerio": "latest"
   }
 }
