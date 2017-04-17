@@ -10,7 +10,8 @@ var url = "http://www.theonion.com/article/couple-puts-handful-items-registry-lo
 var T = new TwitterBot(config);
 
 
-function scrape(){
+function scrape(callback){
+    var sentence_list = [];
     request(url, function(err, resp, body){
         if (!err){
             var $ = cheerio.load(body);
@@ -38,7 +39,6 @@ function scrape(){
             var final_text = formatted_text.trim();
             var final_title = title.trim() + ". ";
             var final_sentence = final_title + final_text;
-            var sentence_list = [];
 
             // If the total length is over 140 characters, we must divide them into multiple tweets
             if (final_sentence.length > 140){
@@ -58,17 +58,18 @@ function scrape(){
                 sentence_list.push(final_sentence);
                 sentence_list.push(final_sentence)
             }
-
-            return sentence_list;
-
         }
-    })
+        callback(sentence_list)
+    });
 }
 
 
-function tweet(item, index){
+function tweet(item){
     T.tweet(item)
 }
 
-var sentences = scrape();
-sentences.foreach(tweet);
+
+scrape(function(sentence){
+    console.log(sentence);
+    sentence.forEach(tweet);
+});
