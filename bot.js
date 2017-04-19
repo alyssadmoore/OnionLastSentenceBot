@@ -1,6 +1,5 @@
 var Twit = require('twit');
 var TwitterBot = require('node-twitterbot').TwitterBot;
-var download = require('download');
 var fs = require('fs');
 var path = require('path');
 var config = require(path.join(__dirname, 'config.js'));
@@ -18,6 +17,7 @@ function get_link(callback){
 
             // Gets featured article link
             var featured_article = $("figure.thumb a");
+            console.log(featured_article);
             var featured_link = featured_article[0]['attribs']['href'];
             if (featured_link.includes("/article/")){
                 final = base + featured_link
