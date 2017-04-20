@@ -1,7 +1,7 @@
 {
   "name": "Project2",
   "version": "1.0.0",
-  "description": "Pic of the day bot",
+  "description": "Onion Last Sentence Bot",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
